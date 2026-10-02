@@ -50,16 +50,24 @@ Later diagnostics reduce the transition model's damage:
 
 | Model | MSE | Status |
 |---|---:|---|
-| History-only ridge | 41.56 | Primary baseline |
-| Rich destination context | 49.89 | Primary adverse result |
-| Support-aware fallback | 43.94 | Post hoc diagnostic |
-| Shrinkage | 41.43 | Post hoc diagnostic; reliable incremental gain not established |
+| History-only ridge | 41.556 | Primary baseline |
+| Rich destination context (penalty 1) | 49.886 | Primary adverse result |
+| Fixed context, penalty 10 | 44.509 | Post hoc, descriptive |
+| Fixed context, penalty 100 | 41.469 | Post hoc, descriptive (not selected) |
+| Fixed context, penalty 1000 | 41.275 | Post hoc, descriptive (not selected) |
+| Earlier-data selected policy | 41.426 | Post hoc; differs from history by −0.130, both cluster intervals include zero |
+
+The nested earlier-data selection is the only defensible estimate of what this
+procedure would have chosen, and it does **not** establish an incremental gain
+over the history baseline. The fixed penalty rows are descriptive and cannot
+override it.
 
 These diagnostics do not retroactively change the submitted abstract.
 
 ## Full-paper navigation
 
 - [`MANUSCRIPT.md`](MANUSCRIPT.md) — working full-paper draft
+- [`BENEFITS.md`](BENEFITS.md) — what this system actually delivers, and what it explicitly does not
 - [`RESULTS.md`](RESULTS.md) — compact numerical evidence
 - [`SCIENTIFIC_STATUS.md`](SCIENTIFIC_STATUS.md) — what is primary, secondary, post hoc, planned or blocked
 - [`CLAIM_LEDGER.md`](CLAIM_LEDGER.md) — submitted claim boundaries
@@ -115,9 +123,11 @@ The next high-value development experiment is:
 
 [
 H0;(	ext{history})
-ightarrow
+
+ightarrow
 H1;(	ext{workload trajectory})
-ightarrow
+
+ightarrow
 H2;(	ext{production trajectory}).
 ]
 
@@ -127,8 +137,15 @@ and should not be rewritten based on historical H1/H2 results.
 The longer-term dependency chain is:
 
 [
-Career ightarrow Opportunity ightarrow Participation ightarrow Workload
-ightarrow Production ightarrow Rotation ightarrow TeamState ightarrow Decision.
+Career 
+ightarrow Opportunity 
+ightarrow Participation 
+ightarrow Workload
+
+ightarrow Production 
+ightarrow Rotation 
+ightarrow TeamState 
+ightarrow Decision.
 ]
 
 Each layer must demonstrate incremental value for its own target and timing

@@ -130,13 +130,15 @@ cause.
 |---|---|---|
 | History ridge vs recent minutes | MSE difference −13.927245 | **REPORTED** |
 | History ridge vs prior-season minutes | MSE difference −16.325916 | **REPORTED** |
-| Support-aware fallback | MSE **43.94** | **POST_HOC** diagnostic |
-| Shrinkage | MSE **41.43** | **POST_HOC** diagnostic; reliable incremental benefit not established |
+| Fixed context penalty 10 / 100 / 1000 | MSE 44.509 / 41.469 / 41.275 | **POST_HOC**, descriptive only |
+| Earlier-data selected policy | MSE **41.426** vs history 41.556; difference −0.129759, player-cluster 95% [−0.462062, 0.198816], date-cluster [−0.460530, 0.212727] | **POST_HOC**; **both intervals include zero** |
 | Caveat | Secondary/post-hoc comparisons are exploratory, with no multiple-comparison correction | reported |
 
-The history-only ridge is the strongest **predeclared** transition model.
-Support-aware fallback reduces the original context damage but remains worse
-than history. Shrinkage removes nearly all of the measured damage and has a
+The history-only ridge is the strongest **predeclared** transition model. The
+nested earlier-data selection lowers the transition error toward that baseline,
+but it does not beat it: both cluster intervals include zero and the selected
+policy's MAE is slightly worse. Fixed penalty candidates are descriptive and
+cannot override the nested selection.
 slightly lower point estimate than history, but reliable incremental benefit is
 not established.
 

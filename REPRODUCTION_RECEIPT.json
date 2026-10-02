@@ -43,8 +43,15 @@
     "context_worsens": 165,
     "earliest_fold_excess_share_pct": 96.45,
     "earliest_fold_training_episodes": 58,
-    "posthoc_support_aware_mse": 43.94,
-    "posthoc_shrinkage_mse": 41.43
+    "posthoc_context_penalty10_mse": 44.508687,
+    "posthoc_context_penalty100_mse": 41.468904,
+    "posthoc_context_penalty1000_mse": 41.275148,
+    "posthoc_earlier_data_selected_mse": 41.426097,
+    "posthoc_selected_minus_history": -0.129759,
+    "posthoc_selected_player_cluster_95": [-0.462062, 0.198816],
+    "posthoc_selected_date_cluster_95": [-0.460530, 0.212727],
+    "posthoc_selected_beats_history": false,
+    "posthoc_note": "Fixed penalty candidates are descriptive and cannot override nested selection. Both intervals include zero, so incremental benefit over the history baseline is not established."
   },
   "required_to_close": [
     "recover the two historical parquet inputs at the recorded hashes",

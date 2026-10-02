@@ -77,10 +77,17 @@ These are diagnostics, not confirmatory primary results.
 
 | Forecast | MSE | Interpretation |
 |---|---:|---|
-| History-only ridge | 41.56 | Strong predeclared baseline |
-| Rich destination context | 49.89 | Material degradation |
-| Support-aware fallback | 43.94 | Removes some damage; still worse than history |
-| Shrinkage | 41.43 | Removes nearly all damage; reliable incremental gain not established |
+| History-only ridge | 41.556 | Strong predeclared baseline |
+| Rich destination context (penalty 1) | 49.886 | Material degradation |
+| Fixed context, penalty 10 | 44.509 | Reduces damage; still worse than history |
+| Fixed context, penalty 100 | 41.469 | Approaches history; fixed choice, not selected |
+| Fixed context, penalty 1000 | 41.275 | Fixed choice, not selected |
+| **Earlier-data selected policy** | **41.426** | Nested selection, no outer label used. Differs from history by −0.130, player-cluster 95% interval [−0.462, +0.199] — **both intervals include zero** |
+
+Fixed-candidate rows are descriptive and cannot override nested selection. The
+nested policy is the only defensible estimate of what this procedure would have
+chosen, and it does **not** establish an incremental gain over the history
+baseline: the interval includes zero and selected MAE is slightly worse.
 
 The scientifically useful conclusion is not that "context never works." It is
 that richer context needs correct support, timing, estimand and regularization

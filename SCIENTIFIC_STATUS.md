@@ -23,8 +23,8 @@ This file is the compact claim boundary for the DPV research program.
 | Player-cluster uncertainty | **PRIMARY** | Adverse transition contrast under player clustering |
 | Issuance-date clustering | **PRIMARY sensitivity** | Dependence assumptions materially affect uncertainty |
 | Fold-1 concentration | **PRIMARY diagnostic** | Transition damage is heavily concentrated in the earliest fold |
-| Support-aware fallback | **POST_HOC** | Detecting unsupported context reduces damage but does not beat history |
-| Shrinkage | **POST_HOC** | Removes nearly all measured damage; incremental benefit over history remains unestablished |
+| Post-hoc remediation ladder | **POST_HOC** | Fixed context penalties 10/100/1000 give MSE 44.509/41.469/41.275. Fixed candidates are descriptive and cannot override nested selection |
+| Earlier-data selected policy | **POST_HOC** | MSE 41.426 vs history 41.556; difference −0.130, player-cluster 95% [−0.462, +0.199] and date-cluster [−0.461, +0.213]. **Both include zero; selected MAE slightly worsens.** Incremental benefit over history is not established |
 | Advanced-metric augmentation | **SECONDARY** | Small additional retrospective signal on narrower coverage |
 | Annual/career model | **SECONDARY** | Structured player history has longer-horizon retrospective signal |
 | H0 → H1 → H2 trajectory study | **PLANNED / development** | Not an empirical result until native execution and review complete |

@@ -185,12 +185,18 @@ does not claim that small sample size is the proven mechanism.
 
 ### 6.5 Post-hoc remediation
 
-A support-aware fallback reduces MSE from 49.89 to 43.94. Shrinkage reduces it
-to 41.43.
+A nested earlier-data selection over context penalties (1, 10, 100, 1000 and an
+explicit history-only candidate) reduces the transition MSE from 49.89 toward the
+history baseline. The selected policy attains 41.426 against 41.556 for history,
+a difference of −0.130 with a player-cluster 95% interval of [−0.462, +0.199].
 
-These are useful diagnostics. They show that context damage can be reduced by
-restricting unsupported behavior and shrinking toward a strong history model.
-They do not establish robust superiority over the 41.56 history-only baseline.
+Two things must be stated plainly. First, the selection uses only earlier data —
+no outer label chooses the candidate — but the first fold has only one qualifying
+inner split, so it selects history-only. Second, both cluster intervals include
+zero and the selected policy's MAE is slightly worse than history's. The fixed
+penalty-100 (41.469) and penalty-1000 (41.275) rows are descriptive only; they
+cannot override the nested selection. **Incremental gain over the history
+baseline is therefore not established.**
 
 ## 7. Interpretation
 
@@ -209,8 +215,15 @@ sample. It is to identify the missing estimands and test them separately.
 This motivates a decomposition:
 
 [
-Career ightarrow Opportunity ightarrow Participation ightarrow Workload
-ightarrow Production ightarrow Rotation ightarrow TeamState ightarrow Decision.
+Career 
+ightarrow Opportunity 
+ightarrow Participation 
+ightarrow Workload
+
+ightarrow Production 
+ightarrow Rotation 
+ightarrow TeamState 
+ightarrow Decision.
 ]
 
 Each layer should be admitted only after demonstrating incremental value for its
