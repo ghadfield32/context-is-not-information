@@ -1,7 +1,7 @@
 {
   "schema": "dpv.git_manifest.v1",
   "branch": "full-paper-development",
-  "snapshot_base_commit": "1a1474fab76c5b1b434c3d0cab403d131d44bd16",
+  "snapshot_base_commit": "7e5a6e5e686e94244a52f22ef4d886cc000c8746",
   "generated_from": "GitHub contents API",
   "scope_note": "Manifest covers all listed development-branch files before this manifest update; GIT_MANIFEST.json intentionally excludes itself.",
   "files": {
@@ -14,7 +14,7 @@
     "FULL_PAPER_CHECKLIST.md": "b2c9a60ebfe2280f363c4326d3b20606870cbe89",
     "MANUSCRIPT.md": "11c1505d4e09248393f4139882c0f94eaca51033",
     "PRIOR_WORK.md": "fc9286be4e2988a26a930d07bceadf4cd5f74a63",
-    "README.md": "71fc0bdce851ee9ff9a6a0ea9981756d6b8c7f4c",
+    "README.md": "da3d422499273d151f613ced9d69535c099a2553",
     "REPRODUCE.md": "796bd49cc9d73da8080b0b7061b7c3a0a3ce844c",
     "REPRODUCTION_BLOCKER.md": "308d234cc136fbe340a73ec59c4e660d225ad277",
     "REPRODUCTION_RECEIPT.json": "362fdea22e2cbaac220c6f760e707c730169c8e7",
