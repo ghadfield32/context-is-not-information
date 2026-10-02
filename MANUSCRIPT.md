@@ -83,9 +83,9 @@ descriptive explanation to a forecasting input or personnel-decision input?
 
 The target is a fixed, versioned box-score production proxy:
 
-[
-PTS + 0.4FG - 0.7FGA - 0.4(FTA-FT) + 0.7REB + STL + 0.7AST + 0.7BLK - 0.4TOV.
-]
+$$
+\text{PTS} + 0.4\,\text{FG} - 0.7\,\text{FGA} - 0.4(\text{FTA}-\text{FT}) + 0.7\,\text{REB} + \text{STL} + 0.7\,\text{AST} + 0.7\,\text{BLK} - 0.4\,\text{TOV}.
+$$
 
 It is not Hollinger Game Score.
 
@@ -214,17 +214,10 @@ sample. It is to identify the missing estimands and test them separately.
 
 This motivates a decomposition:
 
-[
-Career 
-ightarrow Opportunity 
-ightarrow Participation 
-ightarrow Workload
-
-ightarrow Production 
-ightarrow Rotation 
-ightarrow TeamState 
-ightarrow Decision.
-]
+$$
+\text{Career} \rightarrow \text{Opportunity} \rightarrow \text{Participation} \rightarrow \text{Workload}
+\rightarrow \text{Production} \rightarrow \text{Rotation} \rightarrow \text{TeamState} \rightarrow \text{Decision}.
+$$
 
 Each layer should be admitted only after demonstrating incremental value for its
 own target under the correct information cutoff.

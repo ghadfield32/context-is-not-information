@@ -20,9 +20,9 @@ Reproduce the existing history model exactly.
 
 Gate:
 
-[
-max |hat y_{H0,new} - hat y_{H0,parent}| le epsilon.
-]
+$$
+\max \left| \hat{y}_{H0,\text{new}} - \hat{y}_{H0,\text{parent}} \right| \le \epsilon.
+$$
 
 If H0 does not reproduce, stop.
 
@@ -87,9 +87,9 @@ Do not fit C0/C1/C2 until required source roles have real
 
 Estimate:
 
-[
-P(A=1 | I).
-]
+$$
+P(A=1 \mid I).
+$$
 
 Risk-set states should distinguish at least:
 
@@ -107,15 +107,15 @@ Primary metrics: log loss, Brier score and calibration.
 
 Estimate separately:
 
-[
-E[M | A=1,I]
-]
+$$
+E[M \mid A=1, I]
+$$
 
 and
 
-[
-E[R | A=1,M,I].
-]
+$$
+E[R \mid A=1, M, I].
+$$
 
 Then evaluate total contribution rather than multiplying independently optimized
 point estimates without joint validation.
@@ -125,9 +125,9 @@ point estimates without joint validation.
 Model player participation and minutes jointly subject to actual team game
 duration:
 
-[
-sum_i M_i = T_g.
-]
+$$
+\sum_i M_i = T_g.
+$$
 
 This is where incoming opportunity, incumbent displacement, health, role
 competition and coach deployment become one coherent forecast.

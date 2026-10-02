@@ -122,32 +122,19 @@ See [`REPRODUCE.md`](REPRODUCE.md) and
 
 The next high-value development experiment is:
 
-[
-H0;(	ext{history})
-
-ightarrow
-H1;(	ext{workload trajectory})
-
-ightarrow
-H2;(	ext{production trajectory}).
-]
+$$
+\text{H0}\;(\text{history}) \rightarrow \text{H1}\;(\text{workload trajectory}) \rightarrow \text{H2}\;(\text{production trajectory}).
+$$
 
 A separate prospectively registered career/opportunity study remains distinct
 and should not be rewritten based on historical H1/H2 results.
 
 The longer-term dependency chain is:
 
-[
-Career 
-ightarrow Opportunity 
-ightarrow Participation 
-ightarrow Workload
-
-ightarrow Production 
-ightarrow Rotation 
-ightarrow TeamState 
-ightarrow Decision.
-]
+$$
+\text{Career} \rightarrow \text{Opportunity} \rightarrow \text{Participation} \rightarrow \text{Workload}
+\rightarrow \text{Production} \rightarrow \text{Rotation} \rightarrow \text{TeamState} \rightarrow \text{Decision}.
+$$
 
 Each layer must demonstrate incremental value for its own target and timing
 before promotion.
