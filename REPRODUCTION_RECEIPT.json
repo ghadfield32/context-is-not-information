@@ -1,70 +1,56 @@
 {
-  "receipt": "reproduction status",
-  "artifact": "DPV / Context Is Not Information",
+  "schema": "dpv.reproduction_status.v1",
+  "artifact": "Context Is Not Information",
   "status": "NOT_REPRODUCIBLE_AS_PACKAGED",
-  "level_achieved": "none",
+  "level_achieved": "claim_traceability_only",
   "verified_at": "2026-10-01",
-  "verified_by": "agent session, read-only inspection of the source environment",
-
-  "summary": "The reported statistics cannot be recomputed from this repository. No per-row prediction tables are committed, and the transition task's original input bytes are gone.",
-
-  "blocker": {
-    "id": "DPV-R1",
-    "severity": "blocker for reproduction",
-    "what": "original input bytes missing and the runner refuses",
-    "evidence": {
-      "player_game_fact.parquet": {
-        "original_sha256": "368dbee5fb6aaf027d9268521e64c34c45cd50a7dd77c4579b2dedf965da032e",
-        "current_sha256": "a9364e6f01c03854b125e35177d017e4906c11de6b01c9f0257634368512488d",
-        "match": false
-      },
-      "team_game_fact.parquet": {
-        "original_sha256": "48b16b979f01121ca2c5dd0bdb1afb1ea13b89036b1da63cb0a77c273e52bd03",
-        "current_sha256": "199ad56ce16a08a95b2449f599204d8292f4b41dda668bb72ec99a940fe91904",
-        "match": false
-      },
-      "transaction_events.parquet": {
-        "original_sha256": "bafd95455af3fc4600461c4941a17dc6ebe82a2967422559c42ac8966dd32744",
-        "match": true
-      }
+  "verification_basis": "retained study reports, manifests, source hashes, and current repository state",
+  "summary": "The abstract's reported values are traceable to retained study reports, but the historical transition experiment cannot currently be rerun from this repository because two exact inputs are unavailable and no episode-level prediction table was retained.",
+  "historical_transition_inputs": {
+    "player_game_fact.parquet": {
+      "historical_sha256": "368dbee5fb6aaf027d9268521e64c34c45cd50a7dd77c4579b2dedf965da032e",
+      "current_sha256": "a9364e6f01c03854b125e35177d017e4906c11de6b01c9f0257634368512488d",
+      "match": false
     },
-    "source_statement": "The source documentation states the original runner refuses (`Source hash mismatch: player_game_fact.parquet`) before writing an output, that no expected hash was overwritten, and that a bounded read-only search of 71 retained large player/team-game candidate files found no exact copy.",
-    "current_vintage_manifest": "c3cd56a9ff983ff6ce380bc1a3c6445b46effd072ac216636489e7a78978f4e2",
-    "current_vintage_note": "explicitly declared to be different bytes; refitting from it would produce different numbers than the abstract reports"
-  },
-
-  "recovery_attempt": {
-    "attempted_at": "2026-10-01",
-    "method": "enumerate every player_game_fact.parquet and team_game_fact.parquet plus every *fact*.parquet on C: and D:, then SHA-256 each",
-    "files_hashed": 2183,
-    "matches": 0,
-    "conclusion": "Neither original input is present on the local volumes. The recovery route is closed for submission purposes. A copy may exist on an unmounted offline archive; this repository asserts only that the bytes are unavailable to reproduce from."
-  },
-
-  "why_no_dataset_was_shipped": "Transcribing the aggregate reported values into a CSV would not be a reproduction: it would copy the outputs and prove only that arithmetic on them is self-consistent. It is refused deliberately and the refusal is recorded rather than worked around.",
-
-  "what_is_verified": {
-    "reported_numbers_internally_consistent": "every number in abstract.txt traces to the committed source documents, and the transition values match ENTRANT_MINUTES_RESULTS.md exactly",
-    "transition_numbers_confirmed": {
-      "episodes": 313,
-      "history_only_ridge_mse": 41.555856,
-      "context_ridge_mse": 49.885811,
-      "context_minus_history": 8.329955,
-      "player_cluster_ci": [3.124124, 14.211583],
-      "issuance_date_cluster_ci": [-0.070992, 20.781618],
-      "context_wins_loses": [148, 165],
-      "earliest_fold_excess_share_pct": 96.45
+    "team_game_fact.parquet": {
+      "historical_sha256": "48b16b979f01121ca2c5dd0bdb1afb1ea13b89036b1da63cb0a77c273e52bd03",
+      "current_sha256": "199ad56ce16a08a95b2449f599204d8292f4b41dda668bb72ec99a940fe91904",
+      "match": false
     },
-    "caveat": "traceability to the source reports is NOT reproduction. It establishes that the abstract faithfully reports the study, not that the study can be re-run."
+    "transaction_events.parquet": {
+      "historical_sha256": "bafd95455af3fc4600461c4941a17dc6ebe82a2967422559c42ac8966dd32744",
+      "match": true
+    }
   },
-
-  "required_to_unblock": [
-    "recover player_game_fact.parquet and team_game_fact.parquet at the original hashes",
-    "re-run entrant_minutes_run.py against those exact bytes",
-    "export a privacy-reviewed episode table sufficient to recompute MSE, both cluster intervals, the 148/165 count and the fold-1 share",
-    "repeat for the daily task from a pinned box-score vintage",
-    "regenerate this receipt from a clean clone, then submit to a non-author review"
-  ],
-
-  "recommendation": "Do not present this repository as a reproducible artifact, and do not submit the paper as an open-reproducibility entry, until the blocker is cleared."
+  "reported_results_traceable": {
+    "daily_appearances": 68546,
+    "daily_history_mae": 5.1311,
+    "daily_context_mae": 5.1158,
+    "daily_paired_difference": -0.01529,
+    "daily_block_bootstrap_95": [-0.02138, -0.0107],
+    "consecutive_day_records": 10259,
+    "consecutive_day_history_mae": 5.3137,
+    "consecutive_day_context_mae": 5.3312,
+    "transition_episodes": 313,
+    "transition_players": 248,
+    "transition_issuance_dates": 49,
+    "history_ridge_mse": 41.555856,
+    "destination_context_mse": 49.885811,
+    "context_minus_history_mse": 8.329955,
+    "player_cluster_95": [3.124124, 14.211583],
+    "issuance_date_cluster_95": [-0.070992, 20.781618],
+    "context_improves": 148,
+    "context_worsens": 165,
+    "earliest_fold_excess_share_pct": 96.45,
+    "earliest_fold_training_episodes": 58,
+    "posthoc_support_aware_mse": 43.94,
+    "posthoc_shrinkage_mse": 41.43
+  },
+  "required_to_close": [
+    "recover the two historical parquet inputs at the recorded hashes",
+    "rerun the frozen transition experiment",
+    "retain a rights-reviewed episode-level target/prediction table",
+    "reconstruct the daily experiment from a pinned historical box-score vintage",
+    "verify the public package from a clean clone"
+  ]
 }
