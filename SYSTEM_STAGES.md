@@ -130,11 +130,15 @@ cause.
 |---|---|---|
 | History ridge vs recent minutes | MSE difference −13.927245 | **REPORTED** |
 | History ridge vs prior-season minutes | MSE difference −16.325916 | **REPORTED** |
-| Caveat | Secondary, exploratory, conditional on fitted models, **no multiple-comparison correction** | reported |
+| Support-aware fallback | MSE **43.94** | **POST_HOC** diagnostic |
+| Shrinkage | MSE **41.43** | **POST_HOC** diagnostic; reliable incremental benefit not established |
+| Caveat | Secondary/post-hoc comparisons are exploratory, with no multiple-comparison correction | reported |
 
-The history-only ridge baseline is the strongest model in the transition task.
-That is why the adverse context finding is informative rather than an artifact of
-a weak baseline.
+The history-only ridge is the strongest **predeclared** transition model.
+Support-aware fallback reduces the original context damage but remains worse
+than history. Shrinkage removes nearly all of the measured damage and has a
+slightly lower point estimate than history, but reliable incremental benefit is
+not established.
 
 ---
 
@@ -179,7 +183,7 @@ Each of these is a distinct study with its own contract, not a claim of this pap
 | 4 Evaluation design | EXECUTED, past-only, matured horizons, shared episodes |
 | 5 Primary results | REPORTED, with intervals |
 | 6 Failure localization | REPORTED, including the fold-1 concentration |
-| 7 Controls | REPORTED, exploratory only |
+| 7 Controls & remediation | REPORTED, exploratory/post-hoc |
 | 8 Reproduction & release | **BLOCKED** |
 | 9 Follow-on studies | NOT EXECUTED |
 
