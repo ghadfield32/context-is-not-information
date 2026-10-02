@@ -72,6 +72,7 @@ These diagnostics do not retroactively change the submitted abstract.
 - [`RIGHTS.md`](RIGHTS.md) — third-party-data rights position
 - [`data/README.md`](data/README.md) — intended future public evidence tables
 - [`GIT_MANIFEST.json`](GIT_MANIFEST.json) — exact Git blob map for the development package
+- [`SOURCE_INVENTORY.md`](SOURCE_INVENTORY.md) — exact monorepo scientific source lineage and extraction gate
 
 ## Current scientific boundary
 
