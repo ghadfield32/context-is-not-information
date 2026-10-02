@@ -1,8 +1,8 @@
 {
   "schema": "dpv.git_manifest.v1",
   "branch": "full-paper-development",
-  "snapshot_base_commit": "8dd53bd6b1edf520010fe8ff3ff9785c41ebeeb2",
-  "generated_from": "git hash-object over tracked files",
+  "snapshot_base_commit": "004f78b98163b79656838743cb7e16dadb16c944",
+  "generated_from": "git hash-object over tracked files at HEAD",
   "scope_note": "Manifest covers all tracked files on the full-paper-development branch at snapshot_base_commit; GIT_MANIFEST.json intentionally excludes itself.",
   "files": {
     ".gitattributes": "efb3521a4736541ce6bf65981779868b21f3afb3",
@@ -23,7 +23,7 @@
     "RESULTS.md": "36e52339e07ba4663cceb0f2753d62aaa5ca4e37",
     "RIGHTS.md": "bcded703bb8d50f53ae2587625fa925125cd675b",
     "SCIENTIFIC_STATUS.md": "38f51ee01dc661308a2d13f32a43ffd5f2eaa06b",
-    "SHA256SUMS": "1b8e1f7278f878f5fa33daadd0c1cc9a95570053",
+    "SHA256SUMS": "8e4871ed5bdd1f2b443f0bf2a0b5d6c062b52520",
     "SOURCE_INVENTORY.md": "8c7d7f80786d6d0fa090f354a183090a377e79a4",
     "SUBMISSION_SNAPSHOT.md": "6821fe6bffcf52c4ee11d93e81a59a03b3c31319",
     "SYSTEM_STAGES.md": "47cb33c529a79d5aed227c2dc0b76f90278bd822",
