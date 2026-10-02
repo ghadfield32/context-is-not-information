@@ -1,0 +1,16 @@
+{
+  "authors": [
+    {
+      "name": "Geoffrey Hadfield",
+      "affiliation": "World Model Sports LLC",
+      "role": "CEO/founder",
+      "email": "geoff@worldmodelsports.com"
+    }
+  ],
+  "source": "operator supplied 2026-10-01",
+  "paper_title": "Context Is Not Information: Testing Daily and Transition Signals in NBA Player Forecasting",
+  "publication_cleared": false,
+  "reproduction_ready": false,
+  "reproduction_blocker": "REPRODUCTION_BLOCKER.md - original input bytes missing; no per-row prediction tables committed",
+  "submission_receipt": null
+}
