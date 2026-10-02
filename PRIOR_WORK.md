@@ -1,45 +1,49 @@
-# Prior work and the novelty boundary
+# Prior work and novelty boundary
 
-The study does not claim to invent context-aware player forecasting, ridge
-regression, or past-only evaluation. Adding schedule, venue and team context to
-player models is established practice across public NBA analytics.
+This study does not claim to invent context-aware player forecasting, ridge
+regression, player-history models, or past-only evaluation.
 
 ## What is not claimed
 
-- Not the first use of rest, travel or venue features in NBA forecasting.
-- Not a new estimator. The models are ordinary least squares and fixed-alpha ridge.
-- Not a new dataset.
-- Not a causal design.
+- Not the first use of rest, travel, venue, roster or team context in basketball analytics.
+- Not a new estimator; the core models use ordinary least squares and fixed-alpha ridge.
+- Not a new causal design.
+- Not evidence that more context is harmful in every forecasting setting.
 
-## The bounded contribution
+## Bounded contribution
 
-A **paired, same-episode comparison under past-only, cohort-aware evaluation**
-that tests whether context features earn their place, and finds:
+The current evidence contributes a paired, cohort-aware test of whether
+additional context earns inclusion beyond player history.
 
-1. **A small real gain in routine forecasting** — 0.30% MAE, detectable across
-   three evaluation seasons on 68,546 appearances.
-2. **A reversal in a specific short-rest cohort** — the gain does not hold for
-   consecutive-day appearances.
-3. **A substantial adverse result under transition** — richer destination context
-   raises conditional-minutes MSE by 8.33 on 313 episodes, losing on more episodes
-   than it wins.
-4. **A localized instability rather than a mechanism** — 96.45% of the excess
-   error is in the earliest fold, which the study reports instead of tuning away.
-5. **A dependence-choice sensitivity** — the player-cluster interval excludes zero
-   while the issuance-date-cluster interval does not. The study reports both.
+The central findings are:
 
-## Companion results in the same program
+1. a small average gain from simple daily context;
+2. a reversal of that gain in a consecutive-day cohort;
+3. a strong history-only conditional-minutes baseline across roster transitions;
+4. material degradation from a richer destination-context specification;
+5. dependence-sensitive uncertainty;
+6. failure localization in the earliest, smallest-support fold; and
+7. post-hoc evidence that support restrictions and shrinkage remove much of the
+   damage without establishing reliable incremental improvement over history.
 
-- **PMI** — *a rating is not a forecast*
-- **E1** — *more measured state is not automatically more information*
-- **DPV** — *context is not automatically information*
+The contribution is therefore methodological and applied:
 
-These are independent studies with independent data and evaluation contracts.
-They share a thesis about assuming that more inputs means more information; none
-of them claims the others.
+> contextual variables should be admitted only after demonstrating incremental
+> predictive value under the correct estimand, information timing, population
+> and dependence structure.
 
-## Required before a stronger claim
+## Stronger claims require stronger evidence
 
-A claim that this context model is harmful in general would need larger transition
-samples, frozen partial pooling, nested earlier-only selection, and a genuinely
-prospective evaluation. Small-sample instability is localized here, not explained.
+A claim that a particular context model improves transition forecasting would
+need, at minimum:
+
+- a frozen context specification;
+- larger and better-supported transition samples;
+- retained row-level predictions;
+- exact source-vintage lineage;
+- earlier-only model selection where applicable;
+- prospective evaluation;
+- reproduction from a clean public package.
+
+The current historical evidence motivates those tests but does not substitute
+for them.
