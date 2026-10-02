@@ -1,9 +1,9 @@
 {
   "schema": "dpv.git_manifest.v1",
   "branch": "full-paper-development",
-  "snapshot_base_commit": "eb4af07b38ed5ad01884e23f55498a7e5e1173e2",
+  "snapshot_base_commit": "b4695d15a759240f77b2ae51853298ab7cd4376e",
   "generated_from": "git hash-object over tracked files at HEAD",
-  "scope_note": "Blob map of every tracked file on full-paper-development at snapshot_base_commit, excluding GIT_MANIFEST.json (cannot contain its own hash) and SHA256SUMS (which records this file's sha256, so including it would be circular). SHA256SUMS excludes only itself. Together the two files cover every tracked file with exactly those two documented exclusions.",
+  "scope_note": "Blob map of every tracked file on full-paper-development at snapshot_base_commit. Excludes GIT_MANIFEST.json (cannot contain its own hash) and SHA256SUMS (which records this file's sha256, so including it would be circular). SHA256SUMS excludes only itself, matching the PMI and E1 packages. Together the two files cover every tracked file with exactly those two documented exclusions.",
   "files": {
     ".gitattributes": "efb3521a4736541ce6bf65981779868b21f3afb3",
     ".gitignore": "53a33a8458e3338ef62727c42fb0edfbd40cee20",
