@@ -1,77 +1,132 @@
 # Context Is Not Information
 
 **Testing Daily and Transition Signals in NBA Player Forecasting**
+
 Geoffrey Hadfield · World Model Sports LLC · geoff@worldmodelsports.com
 
-## ⚠️ Read this first: this package is NOT yet independently reproducible
+## Start here
 
-`REPRODUCTION_BLOCKER.md` documents a hard blocker. The transition experiment's
-original inputs no longer exist, and the recorded bytes differ from the ones the
-study used:
+This repository has two distinct states:
 
-| Input | Original SHA-256 | Current bytes |
-|---|---|---|
-| `player_game_fact.parquet` | `368dbee5…` | `a9364e6f…` |
-| `team_game_fact.parquet` | `48b16b97…` | `199ad56c…` |
+- **Submitted abstract snapshot:** branch [`submitted-abstract-2026-10-01`](https://github.com/ghadfield32/context-is-not-information/tree/submitted-abstract-2026-10-01)
+- **Full-paper development:** branch [`full-paper-development`](https://github.com/ghadfield32/context-is-not-information/tree/full-paper-development)
 
-The runner refuses on hash mismatch, and no per-row prediction tables are
-committed. A genuine evaluation dataset therefore **cannot be constructed** from
-what is available. Do not treat this repository as a reproducible artifact yet.
+The submitted abstract is preserved and should not be rewritten retroactively.
+The development branch is where additional diagnostics, manuscript material and
+future experiments belong.
 
-## The question
+## Research question
 
-Player-value systems routinely add rest, venue, team and transition context to
-player-history features, on the assumption that more context means a better
-forecast. This study tests that assumption directly in two retrospective NBA
-tasks.
+NBA player-value systems routinely add rest, venue, team and transition context
+to player-history features. This project asks:
 
-## The finding
+> **When does additional context actually improve an NBA player forecast, and
+> when does it make the forecast worse?**
 
-**Context is not automatically information.** It can help slightly, or it can
-hurt substantially, depending on the prediction regime.
+## Primary submitted findings
 
-| Task | Sample | Result |
-|---|---|---|
-| Daily production | 68,546 appearances | Context **helps** slightly: MAE 5.1311 → 5.1158 (**0.30%**) |
-| Consecutive-day cohort | 10,259 records | Context **hurts**: MAE 5.3137 → 5.3312 |
-| Post-trade conditional minutes | 313 episodes | Richer destination context **hurts badly**: MSE 41.56 → 49.89 |
+| Task | Population | Result |
+|---|---:|---:|
+| Daily production | 68,546 appearances | Context improves MAE **5.1311 → 5.1158** (~0.30%) |
+| Consecutive-day cohort | 10,259 appearances | Context worsens MAE **5.3137 → 5.3312** |
+| Transition history ridge | 313 episodes | MSE **41.56** |
+| Rich destination context | 313 episodes | MSE **49.89** |
 
-The transition failure is not marginal. The context-minus-history difference is
-**+8.33** with a player-cluster interval of **[3.12, 14.21]**, and context loses
-on more episodes than it wins (**148 vs 165**). **96.45%** of the net excess
-squared error sits in the earliest issuance fold, which trains the larger model
-on only 58 episodes.
+Transition context-minus-history:
 
-A sensitivity clustered by issuance date instead gives **[−0.07, 20.78]** — so
-the *dependence choice itself matters*, which is part of the finding rather than
-a footnote.
+- MSE difference **+8.33**;
+- player-cluster 95% interval **[3.12, 14.21]**;
+- issuance-date sensitivity **[-0.07, 20.78]**;
+- context improves 148 episodes and worsens 165;
+- 96.45% of net excess squared error is concentrated in the earliest fold.
 
-## Why it matters
+The core conclusion is:
 
-Both tasks were run with past-only, cohort-aware evaluation on identical
-episodes. The lesson is procedural: context features should have to **earn**
-inclusion through evaluation under the correct target, timing, cohort and sample
-size — not be added because they are available.
+> **Context is not automatically information.**
 
-This sits alongside two companion results from the same program:
+## Post-hoc diagnostics
 
-- **PMI** — *a rating is not a forecast*
-- **E1** — *more measured state is not automatically more information*
-- **DPV** — *context is not automatically information*
+Later diagnostics reduce the transition model's damage:
 
-## What this study does NOT claim
+| Model | MSE | Status |
+|---|---:|---|
+| History-only ridge | 41.56 | Primary baseline |
+| Rich destination context | 49.89 | Primary adverse result |
+| Support-aware fallback | 43.94 | Post hoc diagnostic |
+| Shrinkage | 41.43 | Post hoc diagnostic; reliable incremental gain not established |
 
-Not causal rest effects. Not participation forecasts. Not injury modeling. Not
-trade profitability, financial benefit, or optimal trade timing. Not
-coach/team context improving forecasts. Not validation of a deployed system.
-Those remain separate, unexecuted studies.
+These diagnostics do not retroactively change the submitted abstract.
 
-## Files
+## Full-paper navigation
 
-| File | Purpose |
-|---|---|
-| `abstract.txt` / `abstract.md` | The abstract |
-| `CLAIM_LEDGER.md` | Every claim → evidence → limitation |
-| `DATA.md` | Data provenance and the reproduction boundary |
-| `RIGHTS.md` | Rights position; no licence asserted |
-| `REPRODUCTION_BLOCKER.md` | Why the repo is not yet reproducible |
+- [`MANUSCRIPT.md`](MANUSCRIPT.md) — working full-paper draft
+- [`RESULTS.md`](RESULTS.md) — compact numerical evidence
+- [`SCIENTIFIC_STATUS.md`](SCIENTIFIC_STATUS.md) — what is primary, secondary, post hoc, planned or blocked
+- [`CLAIM_LEDGER.md`](CLAIM_LEDGER.md) — submitted claim boundaries
+- [`SYSTEM_STAGES.md`](SYSTEM_STAGES.md) — stage-by-stage system status
+- [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md) — H0/H1/H2, prospective C0/C1/C2, participation, rotations and decisions
+- [`REPRODUCE.md`](REPRODUCE.md) — reproduction plan and closure criteria
+- [`REPRODUCTION_BLOCKER.md`](REPRODUCTION_BLOCKER.md) — exact historical blocker
+- [`DATA.md`](DATA.md) — data provenance
+- [`RIGHTS.md`](RIGHTS.md) — third-party-data rights position
+- [`data/README.md`](data/README.md) — intended future public evidence tables
+
+## Current scientific boundary
+
+This work supports:
+
+1. a small average daily-context gain;
+2. a clear short-rest failure cohort;
+3. a strong player-history transition baseline;
+4. material degradation from a richer destination-context specification;
+5. evidence that support restrictions and shrinkage can reduce that damage;
+6. the methodological requirement that context earn inclusion through
+   temporally valid incremental evaluation.
+
+This work does **not** yet establish:
+
+- causal rest or injury effects;
+- participation probability;
+- coherent team rotations;
+- optimal trade timing;
+- trade profitability;
+- financial benefit;
+- prospective confirmation of the historical transition result.
+
+## Reproduction status
+
+The historical transition experiment is traceable to retained reports but is not
+currently reproducible end to end from this standalone repository.
+
+Two exact historical input files are no longer available at their recorded
+hashes, and no episode-level target/prediction table was retained. The
+hash-pinned runner correctly refuses to use a later vintage as though it were
+the original experiment.
+
+See [`REPRODUCE.md`](REPRODUCE.md) and
+[`REPRODUCTION_BLOCKER.md`](REPRODUCTION_BLOCKER.md).
+
+## Research direction
+
+The next high-value development experiment is:
+
+[
+H0;(	ext{history})
+ightarrow
+H1;(	ext{workload trajectory})
+ightarrow
+H2;(	ext{production trajectory}).
+]
+
+A separate prospectively registered career/opportunity study remains distinct
+and should not be rewritten based on historical H1/H2 results.
+
+The longer-term dependency chain is:
+
+[
+Career ightarrow Opportunity ightarrow Participation ightarrow Workload
+ightarrow Production ightarrow Rotation ightarrow TeamState ightarrow Decision.
+]
+
+Each layer must demonstrate incremental value for its own target and timing
+before promotion.
