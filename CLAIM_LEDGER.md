@@ -29,6 +29,8 @@ Source artifacts live in the World Model Sports repository under
 | First fold = **96.45%** of net excess squared error | Fold table (2018: history 39.94 vs context 89.24) | Localizes instability; does **not** prove small-sample estimation is the cause |
 | History ridge beats recent (−13.93) and prior (−16.33) controls | Secondary comparisons | Exploratory, conditional on fitted models, no multiple-comparison correction |
 | All four recent-minute bands show worse context MSE | Band table | <10 (51), 10–<20 (107), 20–<30 (96), 30+ (59) episodes |
+| Post-hoc support-aware fallback MSE **43.94** | Retained diagnostic study | Reduces context damage but remains worse than history; not a confirmatory primary result |
+| Post-hoc shrinkage MSE **41.43** | Retained diagnostic study | Point estimate slightly below 41.56 history baseline; reliable incremental benefit is not established |
 | The >30-day gap cohort is **not** an injury cohort | 14 episodes, context/history MSE 107.19/59.49 | An injury interpretation would be unsupported |
 
 ## Explicitly not established
