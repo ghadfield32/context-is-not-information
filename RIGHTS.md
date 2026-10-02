@@ -1,48 +1,40 @@
-# Rights and data disposition — DPV
+# Rights and data disposition
 
-**Status: no redistribution licence is asserted, and none was obtained.**
+## Current state
 
-## What is claimed
+No redistribution licence is asserted for NBA-derived source data or derived
+row-level evaluation data.
 
-| Material | Position |
+| Material | Public package state |
 |---|---|
-| Original WMS code | MIT, covering original code only |
-| NBA-derived data and derived aggregates | **No licence asserted.** Attribution to NBA.com is required and does not grant redistribution rights |
-| Raw box scores, player-game facts, team-game facts, transaction records | **Not bundled.** Private inputs |
-| Derived aggregate reports | Present as reported results; their redistribution is an **open decision** |
+| Original research text and repository structure | Public |
+| Raw NBA box scores / player-game / team-game facts | Not bundled |
+| Raw transaction records | Not bundled |
+| Historical per-row evaluation predictions | Not retained in this package |
+| Aggregate research results | Public with provenance and limitations |
 
-## What is not claimed
+Attribution does not itself grant redistribution rights. De-identification also
+does not create a redistribution licence.
 
-- That the authors hold a licence to redistribute NBA-derived content.
-- That anonymizing player and episode identifiers changes the rights position. **It
-  does not.** De-identification is not a licence, and this package does not treat
-  it as one.
-- That academic intent, a public repository URL, or the MIT code licence grants
-  third-party data rights.
-- That this repository has been legally reviewed.
+## Reproduction consequence
 
-## The decision that is required
+The transition study's exact historical player-game and team-game input bytes
+are no longer available at the hashes used by the original run. A later data
+vintage exists, but using it would define a different experiment.
 
-Sloan asks for the data used in the research and places third-party permission
-responsibility on the author. This study's inputs are NBA-derived and its
-original input bytes are missing, so the package currently supplies **neither**
-bundled data nor a working acquisition route.
+Accordingly, this repository does not substitute newer bytes for the historical
+ones and does not present the current transition package as an end-to-end
+reproduction.
 
-The operator must choose, explicitly:
+## Acceptable future release routes
 
-1. **Bundle derived evaluation data** — requires a rights position the operator is
-   willing to accept, and requires the data to exist in reproducible form first.
-2. **Supply a pinned acquisition route** — not currently possible, because the
-   original vintage is unavailable.
-3. **Publish code and reported results only**, with the reproduction limitation
-   stated plainly and the repository **not** presented as a reproducible artifact.
+A stronger public evidence package requires one of:
 
-Option 3 is the honest description of the current state, and it is what
-`README.md` and `DATA.md` say.
+1. recovery of the exact historical input bytes and regeneration of the
+   episode-level outputs;
+2. a rights-cleared acquisition route that reconstructs the same historical
+   study vintage; or
+3. a separately versioned new study on a releasable data vintage, reported as
+   new evidence rather than reproduction of the historical result.
 
-## Do not
-
-- Do not add an anonymization disclaimer that implies the rights question is
-  resolved by de-identification.
-- Do not describe this package as reproducible while the inputs are missing.
-- Do not copy private source tables into a public repository at a deadline.
+Any future row-level export should undergo separate rights and disclosure review.
