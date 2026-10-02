@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research package, please cite it using the metadata below."
+title: "Context Is Not Information: Testing Daily and Transition Signals in NBA Player Forecasting"
+type: article
+authors:
+  - family-names: Hadfield
+    given-names: Geoffrey
+    affiliation: World Model Sports LLC
+    email: geoff@worldmodelsports.com
+repository-code: "https://github.com/ghadfield32/context-is-not-information"
+date-released: 2026-10-01
