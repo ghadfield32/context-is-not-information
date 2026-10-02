@@ -15,6 +15,9 @@ The submitted title is:
 This development branch may add manuscript material, diagnostics, code, or new
 experiments. Those additions do **not** retroactively alter what was submitted.
 
+The current development head and the verified data-vintage status are recorded in
+`DEVELOPMENT_BASELINE.md`.
+
 For any result added after the submission snapshot, record:
 
 - study/experiment identity;
