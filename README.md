@@ -65,11 +65,13 @@ These diagnostics do not retroactively change the submitted abstract.
 - [`CLAIM_LEDGER.md`](CLAIM_LEDGER.md) — submitted claim boundaries
 - [`SYSTEM_STAGES.md`](SYSTEM_STAGES.md) — stage-by-stage system status
 - [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md) — H0/H1/H2, prospective C0/C1/C2, participation, rotations and decisions
+- [`FULL_PAPER_CHECKLIST.md`](FULL_PAPER_CHECKLIST.md) — finite manuscript/release finish line
 - [`REPRODUCE.md`](REPRODUCE.md) — reproduction plan and closure criteria
 - [`REPRODUCTION_BLOCKER.md`](REPRODUCTION_BLOCKER.md) — exact historical blocker
 - [`DATA.md`](DATA.md) — data provenance
 - [`RIGHTS.md`](RIGHTS.md) — third-party-data rights position
 - [`data/README.md`](data/README.md) — intended future public evidence tables
+- [`GIT_MANIFEST.json`](GIT_MANIFEST.json) — exact Git blob map for the development package
 
 ## Current scientific boundary
 
