@@ -1,9 +1,9 @@
 {
   "schema": "dpv.git_manifest.v1",
   "branch": "full-paper-development",
-  "snapshot_base_commit": "b4695d15a759240f77b2ae51853298ab7cd4376e",
+  "snapshot_base_commit": "806a5392af3dbb793e78b8f076c3c5d76900f54f",
   "generated_from": "git hash-object over tracked files at HEAD",
-  "scope_note": "Blob map of every tracked file on full-paper-development at snapshot_base_commit. Excludes GIT_MANIFEST.json (cannot contain its own hash) and SHA256SUMS (which records this file's sha256, so including it would be circular). SHA256SUMS excludes only itself, matching the PMI and E1 packages. Together the two files cover every tracked file with exactly those two documented exclusions.",
+  "scope_note": "Blob map of every tracked file on full-paper-development at snapshot_base_commit. Excludes GIT_MANIFEST.json (cannot contain its own hash) and SHA256SUMS (which records this file's sha256, so including it would be circular). SHA256SUMS excludes only itself, matching the PMI and E1 packages. Together the two files cover every tracked file with exactly those two documented exclusions. Neither file can name the commit that contains it, so both describe snapshot_base_commit and are committed in that commit's child.",
   "files": {
     ".gitattributes": "efb3521a4736541ce6bf65981779868b21f3afb3",
     ".gitignore": "53a33a8458e3338ef62727c42fb0edfbd40cee20",
@@ -15,8 +15,8 @@
     "FULL_PAPER_CHECKLIST.md": "b2c9a60ebfe2280f363c4326d3b20606870cbe89",
     "MANUSCRIPT.md": "6db1c3eefd2d4cf72df4f424814ce0e2c9cdcb0f",
     "PRIOR_WORK.md": "fc9286be4e2988a26a930d07bceadf4cd5f74a63",
-    "README.md": "e9e68ca2df63fb18239f23d62e78144cba2f34e6",
-    "REPRODUCE.md": "796bd49cc9d73da8080b0b7061b7c3a0a3ce844c",
+    "README.md": "059e4b6c15f340ac058443257fd798bcfb4f4558",
+    "REPRODUCE.md": "8f3df610d50f1f07c70cee28560ec203f53780a0",
     "REPRODUCTION_BLOCKER.md": "308d234cc136fbe340a73ec59c4e660d225ad277",
     "REPRODUCTION_RECEIPT.json": "bf4113e21b1bb7edf20350ba850d1fd382bbfa9b",
     "RESEARCH_ROADMAP.md": "3b5318c7ce6645c931befc3b5a4749c5203fae4d",
@@ -29,6 +29,8 @@
     "THIRD_PARTY_NOTICES.md": "1ca342001631732c5cf771e713ac4f00056fb301",
     "abstract.md": "7a56313292915678f7747a3f30a387f42531f4ce",
     "abstract.txt": "f8352c5b46c995cfc4b8d39ffc9a82c30d0ced48",
-    "data/README.md": "1af6a516a1d0606ce0abf379be835b16b4dbc785"
+    "data/README.md": "1af6a516a1d0606ce0abf379be835b16b4dbc785",
+    "regenerate_integrity.py": "7ad7395c6c659357ad56d38c94d427dd71c3538b",
+    "verify_integrity.py": "3db269de55ad3f4effe40e517991716b122625f3"
   }
 }

@@ -75,6 +75,7 @@ These diagnostics do not retroactively change the submitted abstract.
 - [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md) — H0/H1/H2, prospective C0/C1/C2, participation, rotations and decisions
 - [`FULL_PAPER_CHECKLIST.md`](FULL_PAPER_CHECKLIST.md) — finite manuscript/release finish line
 - [`REPRODUCE.md`](REPRODUCE.md) — reproduction plan and closure criteria
+- [`verify_integrity.py`](verify_integrity.py) — runnable fresh-clone integrity check
 - [`REPRODUCTION_BLOCKER.md`](REPRODUCTION_BLOCKER.md) — exact historical blocker
 - [`DATA.md`](DATA.md) — data provenance
 - [`RIGHTS.md`](RIGHTS.md) — third-party-data rights position
