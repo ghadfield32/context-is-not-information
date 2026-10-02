@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+outputs/
+private_data/
+raw_data/
+tmp/
+*.log
+.DS_Store
